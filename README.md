@@ -71,7 +71,7 @@ Table: `chat_history`
 | POST | `/ask` | `{selected_text, question}` → `{answer}` |
 | GET | `/history` | None → `[{ts, selected_text, question, answer}]` |
 
-8 Development Split (Two Developers, Balanced)
+8 Development Split
 Akhil – Front-end \& Parsing
 
 - React SPA: upload, local parsing, text reader, highlight, modal.
@@ -88,7 +88,6 @@ Tazree and Sam – Back-end \& LLM
 - Docker Compose file.
 - Logging, error handling.
 
-Both: Collaborate on OpenAPI YAML; mutual code reviews for balance.
 
 9 Milestones
 
