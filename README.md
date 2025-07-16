@@ -30,17 +30,8 @@ Build a browser-based POC demonstrating: upload document → highlight text → 
 | F-14 | All conversation records are displayed in a separate box in the interface, listing the last 20 Q\&A pairs (including selected_text) in reverse chronological order. |
 | F-15 | The user can close the modal at any time, select text elsewhere to ask questions, and reopen a new modal for a different context. |
 
-4 Non-Functional Requirements
 
-
-| Category | Constraint |
-| :-- | :-- |
-| Performance | End-to-end latency ≤ 8s for 600-word highlight, including analysis, search, and history retrieval. |
-| Reliability | Restart keeps stored history and vector DB data. |
-| Security | APIs on localhost only; no external access (configure Docker network accordingly). |
-| Maintainability | Docstrings in code; one-command Docker Compose startup. |
-
-5 System Architecture (MVP)
+4 System Architecture (MVP)
 
 ```
 ═════════════════════════════════════════════════════════════
@@ -50,7 +41,7 @@ Build a browser-based POC demonstrating: upload document → highlight text → 
 ═════════════════════════════════════════════════════════════
 ```
 
-6 Data Model (SQLite)
+5 Data Model (SQLite)
 Table: `chat_history`
 
 
@@ -64,7 +55,7 @@ Table: `chat_history`
 
 (Note: Vector DB stores document chunks with embeddings separately.)
 
-7 External Interfaces
+6 External Interfaces
 
 
 | Method | Endpoint | Payload → Response |
@@ -73,7 +64,8 @@ Table: `chat_history`
 | POST | `/ask` | `{selected_text, question}` → `{answer}` |
 | GET | `/history` | None → `[{ts, selected_text, question, answer}]` |
 
-8 Development Split
+7 Development Split
+
 Front-end \& Parsing
 
 - React SPA: upload, local parsing, text reader, highlight, modal.
@@ -90,12 +82,12 @@ Back-end \& LLM
 - Docker Compose file.
 - Logging, error handling.
 
-9 Milestones
+8 Milestones
 
 
 | Week | Deliverables |
 | :-- | :-- |
 | 1 | File upload \& local text parsing (A); FastAPI skeleton + `/upload` with chunking/embedding (B). |
-| 2-3 | Highlight modal \& `/ask` (A); Question analysis, vector search, history retrieval, LLM call + SQLite insert (B). |
-| 4-5 | History page (A); Docker packaging \& README (B); joint demo. |
+| 1-3 | Highlight modal \& `/ask` (A); Question analysis, vector search, history retrieval, LLM call + SQLite insert (B). |
+| 4 | History page (A); Docker packaging \& README (B); joint demo. |
 
