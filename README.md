@@ -1,4 +1,3 @@
-────────────────────────────────────────────────────────
 1  Purpose
 Deliver a browser-based proof-of-concept that demonstrates the core loop: *upload a document → highlight text → ask a question → receive an LLM answer*. The prototype sacrifices non-essential features (e.g., multi-user auth, RAG retrieval) to minimise development time while still producing a fully runnable system.
 
