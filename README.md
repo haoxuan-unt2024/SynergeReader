@@ -1,5 +1,5 @@
 1 Purpose
-Build a browser-based POC demonstrating: upload document → highlight text → ask question → get LLM answer using Gemini, enhanced with question analysis, vector similarity search from the full document, and incorporation of relevant history. Skip non-essentials (e.g., multi-user auth) for quick development, but ensure it's fully runnable.
+Build a browser-based POC demonstrating: upload document → highlight text → ask question → get LLM answer using Gemini, enhanced with question analysis, vector similarity search from the full document, and incorporation of relevant history.
 
 2 Scope
 
